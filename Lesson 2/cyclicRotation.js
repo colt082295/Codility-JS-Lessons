@@ -37,8 +37,8 @@ each element of array A is an integer within the range [−1,000..1,000].
 */
 
 function rotateArray(A, K) {
-    K %= A.length;
-    return A.slice(-K).concat(A.slice(0, -K));
+    var offset = K % A.length; // Or if you don't want to waste a variable: K %= A.length;
+    return A.slice(-offset).concat(A.slice(0, -offset));
 }
 
 console.log(rotateArray([1,2,3,4,5],(Math.floor(Math.random() * 9)))) // Rotate array by random # of spaces.
