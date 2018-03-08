@@ -19,4 +19,26 @@ function solution1(A) {
     return min;
 }
 
-console.log(solution1([3]));
+function solution2(A) {
+    if(A.length === 0) {
+        return 1;
+    }
+    
+    let charMap = {};
+    for(let i = 0; i < A.length; i++) {
+        if(charMap[A[i]]) {
+           charMap[A[i]]++; 
+        } else {
+            charMap[A[i]] = 1;
+        }
+    }
+    
+    let i = 1;
+    
+    while(charMap[i]) {
+        i++;
+    }
+    return i;
+}
+
+console.log(solution2([3,5,-1,1,8]));
