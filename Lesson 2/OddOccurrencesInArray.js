@@ -44,9 +44,7 @@ function solution2(A) {
     var agg = 0;
     
     for(var i=0; i<A.length; i++) {
-        console.log("Before:",agg);
         agg ^= A[i];
-        console.log("After:",agg);
     }
     
     return agg;
