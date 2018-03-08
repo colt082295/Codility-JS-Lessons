@@ -45,7 +45,7 @@ expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 */
 
-function tapeEquilibrium(A) {
+function solution1(A) {
     var a = A[0];
     var b = 0;
 
@@ -67,4 +67,50 @@ function tapeEquilibrium(A) {
     return min;
 }
 
-console.log(tapeEquilibrium([3, 1, 2, 4, 3]))
+function solution2(A) {
+    var minDiff,
+    sumTotal = 0,
+    sumLeft = 0;
+
+  if (A.length == 2) {
+    return Math.abs(A[0] - A[1]);
+  }
+
+  if (A.length == 1) {
+    return Math.abs(A[0]);
+  }
+
+  for (i = 0; i < A.length; i++) {
+    sumTotal += A[i];
+  }
+
+  for (p = 0; p < A.length - 1; p++) {
+    sumLeft += A[p];
+    var sumRight = sumTotal - sumLeft;
+    var diff = Math.abs(sumLeft - sumRight);
+    minDiff = (diff > minDiff) ? minDiff : diff;
+  }
+
+  return minDiff;
+}
+
+function solution3(A) {
+    var sum1 = 0;
+    var sum2 = A.reduce(function(acc, i) {
+        return acc + i;
+    });
+
+    var minDiff = Number.POSITIVE_INFINITY;
+    
+    for (var p = 0; p < A.length - 1; p++)
+    {
+        sum1 += A[p];
+        sum2 -= A[p];
+        var diff = sum2 - sum1;
+        minDiff = Math.min(minDiff, Math.abs(diff));
+    }
+    
+    return minDiff;
+}
+
+console.log(solution3([3, 1, 2, 4, 3]))
