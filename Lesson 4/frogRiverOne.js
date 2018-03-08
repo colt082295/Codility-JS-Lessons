@@ -47,7 +47,7 @@ expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(X), beyond input storage (not counting the storage required for input arguments).
 */
 
-function frogRiver(X, A) {
+function solution1(X, A) {
 
     let times = {}
     
@@ -71,4 +71,26 @@ function frogRiver(X, A) {
     return maxTime;
 }
 
-console.log(frogRiver(5, [1, 3, 1, 4, 2, 3, 5, 4]));
+
+function solution2(X, A) {
+    var P = {};
+    var size = 0;
+  
+    for (var i=0; i<A.length; i++) {
+      
+      if (P[A[i]]){
+  
+      }
+      else {
+        P[A[i]] = true;
+        size++;
+      }
+      
+      if (size === X) {
+        return i;
+      }
+    }
+    return -1;
+}
+
+console.log(solution1(5, [1, 3, 1, 4, 2, 3, 5, 4]));
