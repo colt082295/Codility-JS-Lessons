@@ -28,8 +28,8 @@ Complexity:
 expected worst-case time complexity is O(1);
 expected worst-case space complexity is O(1).
 */
-function frogJmp(X, Y, D) {
+function solution1(X, Y, D) {
     return Math.ceil((Y - X) / D);
 }
 
-console.log(frogJmp(1,5,2));
+console.log(solution1(1,5,2));

@@ -28,7 +28,7 @@ expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).
 */
 
-function missingElem(A) {
+function solution1(A) {
     if (A.length === 0){
         return 1;
     }
@@ -43,4 +43,4 @@ function missingElem(A) {
     return requiredSum - actualSum;
 }
 
-console.log(missingElem([1,3,2,5]));
+console.log(solution1([1,3,2,5]));

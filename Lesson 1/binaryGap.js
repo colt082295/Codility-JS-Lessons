@@ -12,7 +12,7 @@ that, given a positive integer N, returns the length of its longest binary gap. 
 For example, given N = 1041 the function should return 5, because N has binary representation 10000010001 and so its longest binary gap is of length 5.
 */
 
-function binaryGap(N) {
+function solution1(N) {
     let binary = N.toString(2); // Convert the number to binary
     let longest = 0; // Longest binary gap - set to 0 by default
     let current = 0; // The current binary gap - set to 0 by default
@@ -30,4 +30,4 @@ function binaryGap(N) {
     return longest;
 }
 
-console.log(binaryGap(Math.floor(Math.random() * 400000))); // Argument is a random #.
+console.log(solution1(Math.floor(Math.random() * 400000))); // Argument is a random #.
