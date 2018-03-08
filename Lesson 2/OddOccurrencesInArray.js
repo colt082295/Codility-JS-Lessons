@@ -35,9 +35,9 @@ expected worst-case space complexity is O(1), beyond input storage (not counting
 */
 
 function solution1(A) {
-    return A.reduce(function(acc,item) {
-        return acc ^ item;
-    });
+    return A.slice(1).reduce(function (odd, current) {
+        return odd ^ current;
+    }, A[0]);
 }
 
 function solution2(A) {
