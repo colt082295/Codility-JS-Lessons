@@ -70,4 +70,21 @@ function solution1(A) {
     } 
 }
 
+function solution2(A) {
+    const length = A.length;
+    
+    var result = A.reduce((result, value) => {
+        result[value] = true;
+        return result;
+    }, {})
+
+    for(var i=1; i<=length; i++){
+        if(!result[i]){
+            return 0;	
+        }
+    }
+
+    return 1;
+}
+
 console.log(solution1([1,5,3,2,4]));
