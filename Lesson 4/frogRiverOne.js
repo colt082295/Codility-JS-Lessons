@@ -73,22 +73,17 @@ function solution1(X, A) {
 
 
 function solution2(X, A) {
-    var P = {};
-    var size = 0;
-  
-    for (var i=0; i<A.length; i++) {
-      
-      if (P[A[i]]){
-  
-      }
-      else {
-        P[A[i]] = true;
-        size++;
-      }
-      
-      if (size === X) {
-        return i;
-      }
+    var p = {};
+    let size = 0;
+    
+    for(let i = 0; i < A.length; i++) {
+        if(!p[A[i]]) {
+            p[A[i]] = true;
+            size++;
+        }
+        if(size === X) {
+            return i;
+        }
     }
     return -1;
 }
