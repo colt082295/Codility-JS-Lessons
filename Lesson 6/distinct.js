@@ -25,4 +25,14 @@ function solution1(A) {
     return [...new Set(A)].length;
 }
 
+function solution2(A) {
+    var map = {}
+    for (var i in A) {
+        if (!map[A[i]]) {
+            map[A[i]] = true
+        }
+    }
+    return Object.keys(map).length
+}
+
 console.log(solution1([2, 1, 1, 2, 3, 1] ));
